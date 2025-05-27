@@ -6,6 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import javax.swing.text.html.Option;
 
 public class SdaTest {
 
@@ -27,6 +30,11 @@ public class SdaTest {
         driver.findElement(By.id("name")).sendKeys("Jenda");
         //Toto mi najde na stranke prvok a vzpise email
         driver.findElement(By.id("email")).sendKeys("email@email.cz");
+        driver.findElement(By.id("gender")).click();
+        driver.findElement(By.id("mobile")).sendKeys("+41 76 305 48 68");
+        driver.findElement(By.id("dob")).sendKeys("08.02.2001");
+        driver.findElement(By.xpath("//label[text()='Reading']/preceding-sibling::input")).click();
+        driver.findElement(By.xpath("/html/body/main/div/div/div[2]/form/div[9]/div/textarea")).sendKeys("Alte Luzernstr. 15");
 
 
     }
