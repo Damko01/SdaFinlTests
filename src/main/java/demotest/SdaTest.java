@@ -1,5 +1,7 @@
 package demotest;
 
+import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -29,6 +31,12 @@ public class SdaTest {
         driver = new ChromeDriver();
     }
 
+    @After
+    public void provedPoUkonceniTestu(){
+        driver.close();
+        driver.quit();
+    }
+
     @Test
     public void sdaTest() throws InterruptedException {
         //Toto mi pojde na stranku tutorialpoint
@@ -39,6 +47,7 @@ public class SdaTest {
         driver.findElement(By.id("name")).sendKeys("Jenda");
         //Toto mi najde na stranke prvok a vzpise email
         driver.findElement(By.id("email")).sendKeys("email@email.cz");
+
         driver.findElement(By.id("gender")).click();
         driver.findElement(By.id("mobile")).sendKeys("+41 76 305 48 68");
         driver.findElement(By.id("dob")).sendKeys("08.02.2001");
